@@ -14,6 +14,11 @@ import { AdminProductsViewComponent } from './admin/admin-products-view/admin-pr
 import { PaymentReceiptComponent } from './payment-receipt/payment-receipt.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { SignupComponent } from './signup/signup.component';
+import { FormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { LogoutComponent } from './logout/logout.component';
+import { VegetablesComponent } from './vegetables/vegetables.component';
+import { ElectronicsComponent } from './electronics/electronics.component';
 
 @NgModule({
   declarations: [
@@ -25,9 +30,14 @@ import { SignupComponent } from './signup/signup.component';
     CheckoutComponent,
     AdminProductsComponent,
     PaymentReceiptComponent,
-    SignupComponent
+    SignupComponent,
+    LogoutComponent,
+    VegetablesComponent,
+    ElectronicsComponent
   ],
   imports: [
+    FormsModule,
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
@@ -40,6 +50,9 @@ import { SignupComponent } from './signup/signup.component';
       {path: 'home' , component:HomeComponent},
       {path: 'payment/receipt', component:PaymentReceiptComponent},
       {path: 'signup', component:SignupComponent},
+      {path: 'logout', component:LogoutComponent},
+      {path: 'vegetables',component:VegetablesComponent},
+      {path:'electronics',component:ElectronicsComponent}
 
     ])
   ],

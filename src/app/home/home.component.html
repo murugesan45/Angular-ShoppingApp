@@ -1,21 +1,143 @@
-<body>
+<div class="container">
 
-    <div class="d-flex" id="wrapper">
-  
-      <!-- Sidebar -->
-      <div class="bg-light border-right" id="sidebar-wrapper">
-        <div class="sidebar-heading">Categories </div>
-        <div class="list-group list-group-flush">
-          <a href="#" class="list-group-item list-group-item-action bg-light">Fruits</a>
-          <a href="#" class="list-group-item list-group-item-action bg-light">Vegetables</a>
-          <a href="#" class="list-group-item list-group-item-action bg-light">Electronics</a>
-          <a href="#" class="list-group-item list-group-item-action bg-light">Stationary</a>
-          <a href="#" class="list-group-item list-group-item-action bg-light">Clothes</a>
-          <a href="#" class="list-group-item list-group-item-action bg-light">Others</a>
-        </div>
+  <div class="row">
+
+    <div class="col-lg-3">
+
+      <h1 class="my-4">Catagories</h1>
+      <div class="list-group">
+        <a class="list-group-item" routerLink="/home">Fruits</a>
+        <a class="list-group-item" routerLink="/vegetables">Vegetables</a>
+        <a href="#" class="list-group-item" routerLink="/electronics">Electronics</a>
       </div>
-      <div id="page-content-wrapper">
-  
+
     </div>
+    <!-- /.col-lg-3 -->
+
+    <div class="col-lg-9">
+      <p> fruits</p>
+
+     
+      <div class="row">
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="https://live.staticflickr.com/3256/2488644619_481cbcce65_b.jpg" alt="" height="200" width="200"></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">Vegetable Combo</a>
+              </h4>
+              <h5>$24.99</h5>
+              <p class="card-text">It consists of combo of carrot, tomato, mushroom.</p>
+              <button type="button" class="btn btn-primary">Add</button>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRJJoo4Jv_6422avtaswAg-5YtXozH0RVwwng&usqp=CAU" alt="" height="200" width="200"></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">Plums</a>
+              </h4>
+              <h5>$24.99</h5>
+              <p class="card-text">A sweety plumbs from ooty. Try once  </p>
+              <button type="button" class="btn btn-primary" (click)= "clickFunction()">Add</button>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMAqPb0PLC7d0URATsV_EJNMmHBENIv8q3Rg&usqp=CAU" alt="" height="200" width="200"></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">Fruits combo</a>
+              </h4>
+              <h5>$24.99</h5>
+              <p class="card-text">It consits of a fruit combo. Healthy Combo </p>
+              <button type="button" class="btn btn-primary">Add</button>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRObKg4BhiAArHZjT9h0IbxBPVOliny1KnVkg&usqp=CAU" alt="" height="200" width="200"></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">Stawberry</a>
+              </h4>
+              <h5>$24.99</h5>
+              <p class="card-text">The tasty Kashmir stawberry. Delicious with sweet taste.</p>
+              <button type="button" class="btn btn-primary">Add</button>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSYpcr-r5bdJ_qX8Qex0oSbsnObW8PLbbrk7Q&usqp=CAU" alt="" height="200" width="200"></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">Grapes</a>
+              </h4>
+              <h5>$24.99</h5>
+              <p class="card-text">A tasty Grapes from hill station</p>
+              <button type="button" class="btn btn-primary">Add</button>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX7002407.jpg" alt="" height="200" width="200"></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">Fruits Combo</a>
+              </h4>
+              <h5>$24.99</h5>
+              <p class="card-text">Fruit combo. Value for money</p>
+              <button type="button" class="btn btn-primary">Add</button>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- /.row -->
+
     </div>
-</body>
+    <!-- /.col-lg-9 -->
+
+  </div>
+  <!-- /.row -->
+
+</div>
+<!-- /.container -->
+
+<!-- Footer -->
+<footer class="py-2 bg-dark">
+  <div class="container">
+    <p class="m-0 text-center text-white">Copyright &copy; My shopping 2020</p>
+  </div>
+  <!-- /.container -->
+</footer>
