@@ -1,17 +1,35 @@
 import { Component, OnInit } from '@angular/core';
-import { AddToCart } from '../add-to-cart';
-
+import { AddToCart, } from '../add-to-cart';
+import {HomeModel} from '../home-model';
+import { CartService } from '../cart.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  providers:[CartService]
 })
-export class HomeComponent{
+export class HomeComponent implements OnInit{
 
-  cart = new AddToCart();
 
- clickFunction(){
-   console.log(this.cart.name);
-   console.log('The button is pressed');
+  constructor(private service :CartService){}
+  ngOnInit(): void {
+   this.postToFrontEnd();
+  }
+
+  home = new HomeModel();
+
+ clickFunction(name: string, cata:string,url:string, price:number){
+        this.service.addToCart(name,cata,url,price);
  }
+
+ postToFrontEnd(){
+  this.home.items = [{Name:' Vegetable Combo',description:'It consists of combo of carrot, tomato, mushroom.', imageUrl : 'https://live.staticflickr.com/3256/2488644619_481cbcce65_b.jpg',Catagory:'Fruits', Price:56 },
+                     {Name:'Plums',description:'A sweety plumbs from ooty. Try once', imageUrl : 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRJJoo4Jv_6422avtaswAg-5YtXozH0RVwwng&usqp=CAU',Catagory:'Fruits', Price:56},
+                     {Name:'Fruits combo',description:'It consits of a fruit combo. Healthy Combo', imageUrl : 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMAqPb0PLC7d0URATsV_EJNMmHBENIv8q3Rg&usqp=CAU',Catagory:'Fruits', Price:56},
+                     {Name:'Stawberry',description:'The tasty Kashmir stawberry. Delicious with sweet taste.', imageUrl : 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRObKg4BhiAArHZjT9h0IbxBPVOliny1KnVkg&usqp=CAU',Catagory:'Fruits', Price:56},
+                     {Name:'Grapes',description:'A tasty Grapes from hill station', imageUrl : 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSYpcr-r5bdJ_qX8Qex0oSbsnObW8PLbbrk7Q&usqp=CAU',Catagory:'Fruits', Price:56 },
+                     {Name:'Fruits Combo',description:'Fruit combo. Value for money', imageUrl : 'https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX7002407.jpg',Catagory:'Fruits', Price:56 },
+                    ];
+ }
+
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CartModel } from '../cart-model';
 
 
@@ -9,6 +9,7 @@ import { CartModel } from '../cart-model';
 })
 export class CartComponent implements OnInit {
 
+  @Input() toCart:any;
   ngOnInit(): void {
 
     this.getItems();
