@@ -11,15 +11,16 @@ import { CartService } from '../cart.service';
 export class HomeComponent implements OnInit{
 
 
-  constructor(private service :CartService){}
+  constructor(private service: CartService){}
   ngOnInit(): void {
    this.postToFrontEnd();
   }
 
   home = new HomeModel();
 
- clickFunction(name: string, cata:string,url:string, price:number){
-        this.service.addToCart(name,cata,url,price);
+ clickFunction(name: string, cata:string, url:string, price:number){
+  let product={name : name, category: cata, imageUrl:url, price:price, id: 'murugesan@gmail.com'}
+        this.service.addToCart(product);
  }
 
  postToFrontEnd(){

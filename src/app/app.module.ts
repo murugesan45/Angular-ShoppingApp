@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LogoutComponent } from './logout/logout.component';
 import { VegetablesComponent } from './vegetables/vegetables.component';
 import { ElectronicsComponent } from './electronics/electronics.component';
+import { CartService } from './cart.service';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,7 @@ import { ElectronicsComponent } from './electronics/electronics.component';
 
     ])
   ],
-  providers: [],
+  providers: [CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

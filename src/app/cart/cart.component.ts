@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CartModel } from '../cart-model';
-
+import {CartService} from '../cart.service'
 
 @Component({
   selector: 'app-cart',
@@ -8,24 +8,31 @@ import { CartModel } from '../cart-model';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-
-  @Input() toCart:any;
+constructor(public cartService: CartService){}
   ngOnInit(): void {
 
     this.getItems();
   }
- totalAmount:any;
+ totalAmount=0;
  user = new CartModel();
- sum =0;
+ sum=0;
+  fr:any[];
  getItems(){
-   
-   this.user.items = [{Name:'Bread', Price : 45,Catagory:'Food' },{Name:'Chocolates', Price: 23, Catagory:'Food'},{Name: 'Cookies', Price:78, Catagory :'Food'}];
-    this.totalAmount = this.user.items.forEach(element => {
-       this.sum = this.sum + element.Price;
-    })
-   this.user.total = this.sum;
-   this.sum =0;
-   this.user.item = this.user.items.length;
+        let data = this.cartService.getItemsFromCart().subscribe(dat => {
+           this.user.items = dat.Item.Products.map(data =>
+             {
+               return data; 
+             });
+              dat.Item.Products.forEach(data =>
+              {
+            
+               this.sum = this.sum + data.price;
+               this.user.total = this.sum;
+               console.log(this.user.total);
+              
+                return this.sum; 
+              });
+          });
  }
 
 }
