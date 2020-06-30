@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {map} from 'rxjs/operators';
 import {CartGetModel} from './cart-get-model';
 import { Observable } from 'rxjs';
+import {Products} from '../cart.delete';
  
 @Injectable({
   providedIn: 'root'
@@ -19,15 +19,13 @@ export class CartService {
   getItemsFromCart():Observable<CartGetModel>{
     return this.http.get<CartGetModel>(this.url);
    }
-
-   getItemFromCart(){
-    let data = this.http.get('https://kdqpr8ht4m.execute-api.us-east-1.amazonaws.com/dev/cart').subscribe((data:any[])=>{
-      let sol = JSON.parse(JSON.stringify(data)).Item.Products;
-      console.log('the result us ' + JSON.stringify(sol));
-      return sol;
-    });
-  return data;
-   }
+  deleteFromCart(id:number){
+     return this.http.delete<Products>(`https://kdqpr8ht4m.execute-api.us-east-1.amazonaws.com/dev/cart/${id}`)//.subscribe(data=>{
+    //   console.log(data);
+    // });
+    
+  }
+  
    }
 
 

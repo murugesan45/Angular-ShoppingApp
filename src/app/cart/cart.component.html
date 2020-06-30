@@ -24,7 +24,7 @@
                 </tr>
               </thead>
               <tbody >
-                <tr *ngFor="let product of user.items">
+                <tr *ngFor="let product of user.items; let ind = index"[attr.data-index]="ind">
                   <th scope="row" class="border-0">
                     <div class="p-2">
                       <img [src]="product.imageUrl" alt="" width="70" class="img-fluid rounded shadow-sm">
@@ -36,7 +36,7 @@
 
                   <td class="border-0 align-middle"><strong>${{product.price}}</strong></td>
                   <td class="border-0 align-middle"><strong>1</strong></td>
-                  <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
+                  <td class="border-0 align-middle"><button class= "btn btn-danger" (click)="deleteCart(ind)"> Delete <i class="fa fa-trash"></i></button></td>
                 </tr>
               </tbody>
             </table>

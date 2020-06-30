@@ -34,5 +34,15 @@ constructor(public cartService: CartService){}
               });
           });
  }
-
+  deleteCart(index:number){
+    console.log(index);
+     this.cartService.deleteFromCart(index).subscribe(dat => {
+       console.log(dat);
+      this.user.items = dat.Attributes.Products.map(data =>
+        {
+          console.log(data);
+          return data; 
+        });;
+  });
+}
 }
