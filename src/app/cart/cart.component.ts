@@ -28,21 +28,23 @@ constructor(public cartService: CartService){}
             
                this.sum = this.sum + data.price;
                this.user.total = this.sum;
-               console.log(this.user.total);
-              
-                return this.sum; 
+               return this.sum; 
               });
           });
  }
   deleteCart(index:number){
-    console.log(index);
      this.cartService.deleteFromCart(index).subscribe(dat => {
-       console.log(dat);
-      this.user.items = dat.Attributes.Products.map(data =>
+     this.user.items = dat.Attributes.Products.map(data =>
         {
-          console.log(data);
           return data; 
-        });;
+        });
+        dat.Attributes.Products.forEach(data =>
+          {
+        
+           this.sum = this.sum + data.price;
+           this.user.total = this.sum;
+           return this.sum; 
+          });
   });
 }
 }
